@@ -2,7 +2,7 @@ package by.itland.itjava.naumenko;
 
 import java.util.Scanner;
 
-public class Example41 {
+public class Example4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
