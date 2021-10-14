@@ -7,7 +7,9 @@ public class Example2 {
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
 
-        double res = (Math.pow(x, 2) - 7*x + 10)/(Math.pow(x, 2) - 8*x + 10);
+        double res = (Math.pow(x, 2) - 7 * x + 10) / (Math.pow(x, 2) - 8 * x + 10);
         System.out.println(res);
     }
 }
+
+>>>>>>> 5983351 (firstcommit)
