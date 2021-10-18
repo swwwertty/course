@@ -7,7 +7,8 @@ import java.io.*;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class TestItJava02 {
     @Test
@@ -40,7 +41,7 @@ public class TestItJava02 {
 
     @Test
     public void testPerimeterSquareTriangle(){
-        System.out.println("Тест прямоугольго треугольника");
+        System.out.println("Тест прямоугольного треугольника");
         run("3\n4").include("Площадь прямоугольного треугольника со сторонами 3, 4: 6,000.\n" +
                 "Периметр: 12,000");
         run("5\n5").include("Площадь прямоугольного треугольника со сторонами 5, 5: 12,500.\n" +
@@ -61,10 +62,10 @@ public class TestItJava02 {
     @Test
     public void testDistanceBetweenTwoPoint(){
         System.out.println("Тест на расстояние между точками");
-        run("1\n4\n2\n7").include("Расстояние между тачками A(1, 4) и B(2, 7): 3,162");
-        run("5\n-7\n7\n7").include("Расстояние между тачками A(5, -7) и B(7, 7): 14,142");
-        run("0\n0\n0\n0").include("Расстояние между тачками A(0, 0) и B(0, 0): 0");
-        run("0\n-3\n-4\n0").include("Расстояние между тачками A(0, -3) и B(-4, 0): 5");
+        run("1\n4\n2\n7").include("Расстояние между точками A(1, 4) и B(2, 7): 3,162");
+        run("5\n-7\n7\n7").include("Расстояние между точками A(5, -7) и B(7, 7): 14,142");
+        run("0\n0\n0\n0").include("Расстояние между точками A(0, 0) и B(0, 0): 0");
+        run("0\n-3\n-4\n0").include("Расстояние между точками A(0, -3) и B(-4, 0): 5");
     }
 
     @Test
@@ -74,7 +75,7 @@ public class TestItJava02 {
                 " Высоту 5,369\n" +
                 " площадь 16,645\n" +
                 " радиус вписанной окружности 1,790\n" +
-                "радиус описаной окружеости 3,580");
+                "радиус описанной окружности 3,580");
         run("3,465").include("Треугольник со стороной 3,465 имеет:\n" +
                 " Высоту 3,001\n" +
                 " площадь 5,199\n" +
