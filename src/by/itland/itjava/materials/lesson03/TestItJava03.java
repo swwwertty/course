@@ -12,21 +12,21 @@ import static org.junit.Assert.fail;
 
 public class TestItJava03 {
     @Test
-    public void testPositiveNegativeNumber(){
+    public void testPositiveNegativeNumber() {
         run("2").include("Число положительное");
         run("-115").include("Число отрицательное");
         run("0").include("Число ноль");
     }
 
     @Test
-    public void testConvertNumber(){
+    public void testConvertNumber() {
         run("5").include("5.0");
         run("-3").include("-3.0");
         run("0").include("0.0");
     }
 
     @Test
-    public void testEqualNumber(){
+    public void testEqualNumber() {
         run("5\n5\n3").include("5 5");
         run("7\n-7\n2").include("Одинаковых чисел нет");
         run("8\n8\n8").include("8 8 8");
@@ -35,7 +35,7 @@ public class TestItJava03 {
     }
 
     @Test
-    public void testSumOfDigits(){
+    public void testSumOfDigits() {
         run("4587").include("24");
         run("1234").include("10");
         run("4532").include("14");
@@ -47,7 +47,7 @@ public class TestItJava03 {
     }
 
     @Test
-    public void tesLeapYear(){
+    public void tesLeapYear() {
         run("2000").include("Високосный");
         run("1100").include("Невисокосный");
         run("1600").include("Високосный");
@@ -57,7 +57,7 @@ public class TestItJava03 {
     }
 
     @Test
-    public void testDayMonth(){
+    public void testDayMonth() {
         run("3\n4").include("Март - четверг");
         run("14\n6").include("Неправильное значение месяца");
         run("11\n9").include("Неправильное значение дня");
@@ -65,7 +65,7 @@ public class TestItJava03 {
     }
 
     @Test
-    public void testDayMonthModification(){
+    public void testDayMonthModification() {
         run("3\n4").include("Март - четверг");
         run("2\n26").include("Февраль - пятница");
         run("0\n0").include("Декабрь - воскресенье");
@@ -77,14 +77,14 @@ public class TestItJava03 {
     }
 
     @Test
-    public void testQuadratic(){
+    public void testQuadratic() {
         run("1\n8\n12").include("x1=-2,00; x2=-6,00");
         run("8\n8\n8").include("x1=-2,00; x2=-2,00");
         run("7\n6\n5").include("Уравнение не имеет корней");
     }
 
     @Test
-    public  void testCheckLastNumber(){
+    public void testCheckLastNumber() {
         run("265\n4").include("Цифра 4 не является последней числа 265");
         run("17\n7").include("Цифра 7 является последней числа 17");
         run("-15478\n8").include("Цифра 8 является последней числа -15478");
@@ -93,15 +93,29 @@ public class TestItJava03 {
     }
 
     @Test
-    public void testCheckingForMultiplicity(){
+    public void testNumberDayYear() {
+        run("3\n3\n2000").include("63");
+        run("3\n3\n1999").include("62");
+        run("3\n-3\n1999").include("62");
+        run("-3\n-3\n-1999").include("62");
+        run("3\n3\n1500").include("62");
+        run("3\n3\n1600").include("63");
+        run("3\n3\n2020").include("63");
+        run("18\n1\n2021").include("18");
+        run("-18\n1\n-2021").include("18");
+    }
+
+    @Test
+    public void testCheckingForMultiplicity() {
         run("456\n3").include("Число 456 кратное 3");
         run("-456\n3").include("Число -456 кратное 3");
         run("456\n5").include("Число 456 некратное 5");
         run("155\n5").include("Число 155 кратное 5");
         run("1024\n32").include("Число 1024 кратное 32");
     }
+
     @Test
-    public void testMultiplicationNumbers(){
+    public void testMultiplicationNumbers() {
         run("4\n3").include("четыре умножить на три равно двенадцать");
         run("7\n3").include("семь умножить на три равно двадцать один");
         run("15\n7").include("нужно вводить толко цифры, т.е. значения от 0 до 10");
@@ -110,7 +124,7 @@ public class TestItJava03 {
     }
 
     @Test
-    public void testPrice(){
+    public void testPrice() {
         run("5.26").include("5 рублей 26 копеек");
         run("1.02").include("1 рубль 2 копейки");
         run("23,01").include("23 рубля  1 копейка");
@@ -119,7 +133,7 @@ public class TestItJava03 {
     }
 
     @Test
-    public void testAgeHuman(){
+    public void testAgeHuman() {
         run("Sergey\n28").include("Sergey 28 лет");
         run("Petr\n33").include("Petr 33 года");
         run("Kira\n1").include("Kira 1 год");
@@ -128,8 +142,9 @@ public class TestItJava03 {
         run("alEx\n113").include("alEx 113 лет");
         run("alEx\n101").include("alEx 101 год");
     }
+
     @Test
-    public void testIharBot(){
+    public void testIharBot() {
         run("3500").include("Мы вам перезвоним");
         run("2000\n5").include("За месяц май начислено $3000,00");
         run("2500\n15").include("За месяц 15 начислено $0,00");
@@ -138,12 +153,13 @@ public class TestItJava03 {
         run("200").include("Мы вам перезвоним");
 
     }
-/*
-===========================================================================================================
-НИЖЕ ВСПОМОГАТЕЛЬНЫЙ КОД ТЕСТОВ. НЕ МЕНЯЙТЕ В ЭТОМ ФАЙЛЕ НИЧЕГО.
-Но изучить как он работает - можно, это всегда будет полезно.
-===========================================================================================================
-*/
+
+    /*
+    ===========================================================================================================
+    НИЖЕ ВСПОМОГАТЕЛЬНЫЙ КОД ТЕСТОВ. НЕ МЕНЯЙТЕ В ЭТОМ ФАЙЛЕ НИЧЕГО.
+    Но изучить как он работает - можно, это всегда будет полезно.
+    ===========================================================================================================
+    */
     //-------------------------------  методы ----------------------------------------------------------
     private Class findClass(String SimpleName) {
         String full = this.getClass().getName();
