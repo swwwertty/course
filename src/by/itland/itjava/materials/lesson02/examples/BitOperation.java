@@ -1,4 +1,4 @@
-package by.itland.itjava.materials.examples;
+package by.itland.itjava.materials.lesson02.examples;
 
 public class BitOperation {
 
