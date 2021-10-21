@@ -1,4 +1,4 @@
-package by.itland.itjava.Timshina;
+package by.itland.itjava.timshina.lesson02;
 
 import java.util.Locale;
 import java.util.Scanner;
