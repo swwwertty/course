@@ -9,7 +9,7 @@ public class PerimeterSquareTriangle {
         int b = scanner.nextInt();
         double S = 0.5 * (a * b);
         double P = Math.sqrt(Math.pow(a, 2)+Math.pow(b, 2)) + a + b;
-        System.out.printf("Площадь прямоугольного треугольника со сторонами %d, %d: %.3f. \n" +
+        System.out.printf("Площадь прямоугольного треугольника со сторонами %d, %d: %.3f.\n" +
                 "Периметр: %.3f", a, b, S, P);
 
     }
