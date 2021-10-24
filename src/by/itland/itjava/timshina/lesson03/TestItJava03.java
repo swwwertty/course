@@ -61,7 +61,7 @@ public class TestItJava03 {
         run("3\n4").include("Март - четверг");
         run("14\n6").include("Неправильное значение месяца");
         run("11\n9").include("Неправильное значение дня");
-        run("7\n10").include("Неправильное значение месяца и дня");
+        run("17\n10").include("Неправильное значение месяца и дня");
     }
 
     @Test
@@ -79,7 +79,7 @@ public class TestItJava03 {
     @Test
     public void testQuadratic() {
         run("1\n8\n12").include("x1=-2,00; x2=-6,00");
-        run("8\n8\n8").include("x1=-2,00; x2=-2,00");
+        run("2\n8\n8").include("x1=-4,00; x2=-4,00");
         run("7\n6\n5").include("Уравнение не имеет корней");
     }
 
