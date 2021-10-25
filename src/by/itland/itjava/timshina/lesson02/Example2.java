@@ -1,13 +1,14 @@
-package by.itland.itjava.Timshina;
+package by.itland.itjava.timshina.lesson02;
 
 import java.util.Scanner;
 
-public class Example5 {
+public class Example2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
 
-        double res = x-10*Math.sin(x)+Math.abs(Math.pow(x, 4)-Math.pow(x, 5));
+        double res = (Math.pow(x, 2) - 7 * x + 10) / (Math.pow(x, 2) - 8 * x + 10);
         System.out.println(res);
     }
 }
+
