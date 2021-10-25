@@ -1,4 +1,4 @@
-package by.itland.itjava.materials.lesson03;
+package by.itland.itjava.drobyazko.lesson03;
 
 
 import org.junit.Test;
@@ -39,7 +39,7 @@ public class TestItJava03 {
         run("4587").include("24");
         run("1234").include("10");
         run("4532").include("14");
-        run("-4587").include("-10");
+        run("-4587").include("-24");
         run("-9483").include("-24");
         run("45").include("Число не четырехзначное");
 
@@ -47,7 +47,7 @@ public class TestItJava03 {
     }
 
     @Test
-    public void tesLeapYear() {
+    public void testLeapYear() {
         run("2000").include("Високосный");
         run("1100").include("Невисокосный");
         run("1600").include("Високосный");
@@ -61,7 +61,7 @@ public class TestItJava03 {
         run("3\n4").include("Март - четверг");
         run("14\n6").include("Неправильное значение месяца");
         run("11\n9").include("Неправильное значение дня");
-        run("7\n10").include("Неправильное значение месяца и дня");
+        run("17\n10").include("Неправильное значение месяца и дня");
     }
 
     @Test
@@ -79,7 +79,7 @@ public class TestItJava03 {
     @Test
     public void testQuadratic() {
         run("1\n8\n12").include("x1=-2,00; x2=-6,00");
-        run("8\n8\n8").include("x1=-2,00; x2=-2,00");
+        run("2\n8\n8").include("x1=-2,00; x2=-2,00");
         run("7\n6\n5").include("Уравнение не имеет корней");
     }
 
@@ -125,8 +125,8 @@ public class TestItJava03 {
 
     @Test
     public void testPrice() {
-        run("5.26").include("5 рублей 26 копеек");
-        run("1.02").include("1 рубль 2 копейки");
+        run("5,26").include("5 рублей 26 копеек");
+        run("1,02").include("1 рубль 2 копейки");
         run("23,01").include("23 рубля  1 копейка");
         run("75,51").include("75 рублей 51 копейка");
         run("52,51").include("52 рубля 51 копейка");
@@ -161,60 +161,6 @@ public class TestItJava03 {
     ===========================================================================================================
     */
     //-------------------------------  методы ----------------------------------------------------------
-    private Class findClass(String SimpleName) {
-        String full = this.getClass().getName();
-        String dogPath = full.replace(this.getClass().getSimpleName(), SimpleName);
-        try {
-            return Class.forName(dogPath);
-        } catch (ClassNotFoundException e) {
-            fail("\nERROR:Тест не пройден. Класс " + SimpleName + " не найден.");
-        }
-        return null;
-    }
-
-    private Method checkMethod(String className, String methodName, Class<?>... parameters) throws Exception {
-        Class aClass = this.findClass(className);
-        try {
-            methodName = methodName.trim();
-            Method m;
-            if (methodName.startsWith("static")) {
-                methodName = methodName.replace("static", "").trim();
-                m = aClass.getDeclaredMethod(methodName, parameters);
-                if ((m.getModifiers() & Modifier.STATIC) != Modifier.STATIC) {
-                    fail("\nERROR:Метод " + m.getName() + " должен быть статическим");
-                }
-            } else
-                m = aClass.getDeclaredMethod(methodName, parameters);
-            m.setAccessible(true);
-            return m;
-
-        } catch (NoSuchMethodException e) {
-            System.err.println("\nERROR:Не найден метод " + methodName + " либо у него неверная сигнатура");
-            System.err.println("ERROR:Ожидаемый класс: " + className);
-            System.err.println("ERROR:Ожидаемый метод: " + methodName);
-            return null;
-        }
-    }
-
-    private Method findMethod(Class<?> cl, String name, Class... param) {
-        try {
-            return cl.getDeclaredMethod(name, param);
-        } catch (NoSuchMethodException e) {
-            fail("\nERROR:Тест не пройден. Метод " + cl.getName() + "." + name + " не найден\n");
-        }
-        return null;
-    }
-
-    private Object invoke(Method method, Object o, Object... value) {
-        try {
-            method.setAccessible(true);
-            return method.invoke(o, value);
-        } catch (Exception e) {
-            System.out.println(e.toString());
-            fail("\nERROR:Не удалось вызвать метод " + method.getName() + "\n");
-        }
-        return null;
-    }
 
 
     //метод находит и создает класс для тестирования
@@ -225,7 +171,7 @@ public class TestItJava03 {
 
     private static TestItJava03 run(String in, boolean runMain) {
         Throwable t = new Throwable();
-        StackTraceElement trace[] = t.getStackTrace();
+        StackTraceElement[] trace = t.getStackTrace();
         StackTraceElement element;
         int i = 0;
         do {
@@ -251,7 +197,6 @@ public class TestItJava03 {
     }
 
     //переменные теста
-    private String className;
     private Class<?> aClass;
     private PrintStream oldOut = System.out; //исходный поток вывода
     private PrintStream newOut; //поле для перехвата потока вывода
@@ -259,11 +204,11 @@ public class TestItJava03 {
 
     //Основной конструктор тестов
     private TestItJava03(String className, String in, boolean runMain) {
-        //this.className = className;
+
         aClass = null;
         try {
             aClass = Class.forName(className);
-            this.className = className;
+
 
         } catch (ClassNotFoundException e) {
             fail("ERROR:Не найден класс " + className + "\n");
@@ -283,23 +228,11 @@ public class TestItJava03 {
             }
     }
 
-    //проверка вывода
-    private TestItJava03 is(String str) {
-        assertTrue("ERROR:Ожидается такой вывод:\n<---начало---->\n" + str + "<---конец--->",
-                strOut.toString().equals(str));
-        return this;
-    }
 
     private TestItJava03 include(String str) {
         assertTrue("ERROR:Строка не найдена: " + str + "\n", strOut.toString().contains(str));
         return this;
     }
-
-    private TestItJava03 exclude(String str) {
-        assertTrue("ERROR:Лишние данные в выводе: " + str + "\n", !strOut.toString().contains(str));
-        return this;
-    }
-
 
     //логический блок перехвата вывода
     {
