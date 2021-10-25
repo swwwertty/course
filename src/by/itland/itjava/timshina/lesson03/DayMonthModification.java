@@ -2,222 +2,224 @@ package by.itland.itjava.timshina.lesson03;
 
 import java.util.Scanner;
 
-public class DayMonth {
+public class DayMonthModification {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
-        int y = scanner.nextInt();
-        if ((x < 1 || x >= 13) && (y < 1 || y > 7))
+        double y = scanner.nextDouble();
+        if ((x < 0 ) && (y < 0))
             System.out.println("Неправильное значение месяца и дня");
-        else if(x < 1 || x > 12)
+        else if (x < 0)
             System.out.println("Неправильное значение месяца");
-        else if(y < 1 || y > 7)
+        else if (y < 0)
             System.out.println("Неправильное значение дня");
         else {
-            if (x == 1) {
+            if (x % 12 == 1) {
                 System.out.print("Январь - ");
-                if (y == 1)
+                if (y % 7 == 1)
                     System.out.print("понедельник");
-                else if (y == 2)
+                else if (y % 7 == 2)
                     System.out.print("вторник");
-                else if (y == 3)
+                else if (y % 7 == 3)
                     System.out.print("среда");
-                else if (y == 4)
+                else if (y % 7 == 4)
                     System.out.print("четверг");
-                else if (y == 5)
+                else if (y % 7 == 5)
                     System.out.print("пятница");
-                else if (y == 6)
+                else if (y % 7 == 6)
                     System.out.print("суббота");
                 else
                     System.out.print("воскресенье");
             }
-            if (x == 2) {
+            if (x % 12 == 2) {
                 System.out.print("Февраль - ");
-                if (y == 1)
+                if (y % 7 == 1)
                     System.out.print("понедельник");
-                else if (y == 2)
+                else if (y % 7 == 2)
                     System.out.print("вторник");
-                else if (y == 3)
+                else if (y % 7 == 3)
                     System.out.print("среда");
-                else if (y == 4)
+                else if (y % 7 == 4)
                     System.out.print("четверг");
-                else if (y == 5)
+                else if (y % 7 == 5)
                     System.out.print("пятница");
-                else if (y == 6)
+                else if (y % 7 == 6)
                     System.out.print("суббота");
                 else
                     System.out.print("воскресенье");
             }
-            if (x == 3) {
+            if (x % 12 == 3) {
                 System.out.print("Март - ");
-                if (y == 1)
+                if (y % 7 == 1)
                     System.out.print("понедельник");
-                else if (y == 2)
+                else if (y % 7 == 2)
                     System.out.print("вторник");
-                else if (y == 3)
+                else if (y % 7 == 3)
                     System.out.print("среда");
-                else if (y == 4)
+                else if (y % 7 == 4)
                     System.out.print("четверг");
-                else if (y == 5)
+                else if (y % 7 == 5)
                     System.out.print("пятница");
-                else if (y == 6)
+                else if (y % 7 == 6)
                     System.out.print("суббота");
                 else
                     System.out.print("воскресенье");
             }
-            if (x == 4) {
+            if (x % 12 == 4) {
                 System.out.print("Апрель - ");
-                if (y == 1)
+                if (y % 7 == 1)
                     System.out.print("понедельник");
-                else if (y == 2)
+                else if (y % 7 == 2)
                     System.out.print("вторник");
-                else if (y == 3)
+                else if (y % 7 == 3)
                     System.out.print("среда");
-                else if (y == 4)
+                else if (y % 7 == 4)
                     System.out.print("четверг");
-                else if (y == 5)
+                else if (y % 7 == 5)
                     System.out.print("пятница");
-                else if (y == 6)
+                else if (y % 7 == 6)
                     System.out.print("суббота");
                 else
                     System.out.print("воскресенье");
             }
-            if (x == 5) {
+            if (x % 12 == 5) {
                 System.out.print("Май - ");
-                if (y == 1)
+                if (y % 7 == 1)
                     System.out.print("понедельник");
-                else if (y == 2)
+                else if (y % 7 == 2)
                     System.out.print("вторник");
-                else if (y == 3)
+                else if (y % 7 == 3)
                     System.out.print("среда");
-                else if (y == 4)
+                else if (y % 7 == 4)
                     System.out.print("четверг");
-                else if (y == 5)
+                else if (y % 7 == 5)
                     System.out.print("пятница");
-                else if (y == 6)
+                else if (y % 7 == 6)
                     System.out.print("суббота");
                 else
                     System.out.print("воскресенье");
             }
-            if (x == 6) {
+            if (x % 12 == 6) {
                 System.out.print("Июнь - ");
-                if (y == 1)
+                if (y % 7 == 1)
                     System.out.print("понедельник");
-                else if (y == 2)
+                else if (y % 7 == 2)
                     System.out.print("вторник");
-                else if (y == 3)
+                else if (y % 7 == 3)
                     System.out.print("среда");
-                else if (y == 4)
+                else if (y % 7 == 4)
                     System.out.print("четверг");
-                else if (y == 5)
+                else if (y % 7 == 5)
                     System.out.print("пятница");
-                else if (y == 6)
+                else if (y % 7 == 6)
                     System.out.print("суббота");
                 else
                     System.out.print("воскресенье");
             }
-            if (x == 7) {
+            if (x % 12 == 7) {
                 System.out.print("Июль - ");
-                if (y == 1)
+                if (y % 7 == 1)
                     System.out.print("понедельник");
-                else if (y == 2)
+                else if (y % 7 == 2)
                     System.out.print("вторник");
-                else if (y == 3)
+                else if (y % 7 == 3)
                     System.out.print("среда");
-                else if (y == 4)
+                else if (y % 7 == 4)
                     System.out.print("четверг");
-                else if (y == 5)
+                else if (y % 7 == 5)
                     System.out.print("пятница");
-                else if (y == 6)
+                else if (y % 7 == 6)
                     System.out.print("суббота");
                 else
                     System.out.print("воскресенье");
             }
-            if (x == 8) {
+            if (x % 12 == 8) {
                 System.out.print("Август - ");
-                if (y == 1)
+                if (y % 7 == 1)
                     System.out.print("понедельник");
-                else if (y == 2)
+                else if (y % 7 == 2)
                     System.out.print("вторник");
-                else if (y == 3)
+                else if (y % 7 == 3)
                     System.out.print("среда");
-                else if (y == 4)
+                else if (y % 7 == 4)
                     System.out.print("четверг");
-                else if (y == 5)
+                else if (y % 7 == 5)
                     System.out.print("пятница");
-                else if (y == 6)
+                else if (y % 7 == 6)
                     System.out.print("суббота");
                 else
                     System.out.print("воскресенье");
             }
-            if (x == 9) {
+            if (x % 12 == 9) {
                 System.out.print("Сентябрь - ");
-                if (y == 1)
+                if (y % 7 == 1)
                     System.out.print("понедельник");
-                else if (y == 2)
+                else if (y % 7 == 2)
                     System.out.print("вторник");
-                else if (y == 3)
+                else if (y % 7 == 3)
                     System.out.print("среда");
-                else if (y == 4)
+                else if (y % 7 == 4)
                     System.out.print("четверг");
-                else if (y == 5)
+                else if (y % 7 == 5)
                     System.out.print("пятница");
-                else if (y == 6)
+                else if (y % 7 == 6)
                     System.out.print("суббота");
                 else
                     System.out.print("воскресенье");
             }
-            if (x == 10) {
+            if (x % 12 == 10) {
                 System.out.print("Октябрь - ");
-                if (y == 1)
+                if (y % 7 == 1)
                     System.out.print("понедельник");
-                else if (y == 2)
+                else if (y % 7 == 2)
                     System.out.print("вторник");
-                else if (y == 3)
+                else if (y % 7 == 3)
                     System.out.print("среда");
-                else if (y == 4)
+                else if (y % 7 == 4)
                     System.out.print("четверг");
-                else if (y == 5)
+                else if (y % 7 == 5)
                     System.out.print("пятница");
-                else if (y == 6)
+                else if (y % 7 == 6)
                     System.out.print("суббота");
                 else
                     System.out.print("воскресенье");
             }
-            if (x == 11) {
+            if (x % 12 == 11) {
                 System.out.print("Ноябрь - ");
-                if (y == 1)
+                if (y % 7 == 1)
                     System.out.print("понедельник");
-                else if (y == 2)
+                else if (y % 7 == 2)
                     System.out.print("вторник");
-                else if (y == 3)
+                else if (y % 7 == 3)
                     System.out.print("среда");
-                else if (y == 4)
+                else if (y % 7 == 4)
                     System.out.print("четверг");
-                else if (y == 5)
+                else if (y % 7 == 5)
                     System.out.print("пятница");
-                else if (y == 6)
+                else if (y % 7 == 6)
                     System.out.print("суббота");
                 else
                     System.out.print("воскресенье");
             }
-            if (x == 12) {
+            if (x % 12 == 12 || x % 12 == 0) {
                 System.out.print("Декабрь - ");
-                if (y == 1)
+                if (y % 7 == 1)
                     System.out.print("понедельник");
-                else if (y == 2)
+                else if (y % 7 == 2)
                     System.out.print("вторник");
-                else if (y == 3)
+                else if (y % 7 == 3)
                     System.out.print("среда");
-                else if (y == 4)
+                else if (y % 7 == 4)
                     System.out.print("четверг");
-                else if (y == 5)
+                else if (y % 7 == 5)
                     System.out.print("пятница");
-                else if (y == 6)
+                else if (y % 7 == 6)
                     System.out.print("суббота");
                 else
                     System.out.print("воскресенье");
             }
         }
     }
+
+
 }

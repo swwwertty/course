@@ -47,7 +47,7 @@ public class TestItJava03 {
     }
 
     @Test
-    public void tesLeapYear() {
+    public void testLeapYear() {
         run("2000").include("Високосный");
         run("1100").include("Невисокосный");
         run("1600").include("Високосный");

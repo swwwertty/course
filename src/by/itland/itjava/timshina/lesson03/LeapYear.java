@@ -11,7 +11,7 @@ public class LeapYear {
             System.out.println("Год не может быть отрицательным");
         else if ((x % 100 == 0) && (x % 400 != 0))
             System.out.println("Невисокосный");
-        else if (x%4==0)
+        else if (x % 4 == 0)
             System.out.println("Високосный");
         else
             System.out.println("Невисокосный");
