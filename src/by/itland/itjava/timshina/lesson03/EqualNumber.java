@@ -18,7 +18,5 @@ public class EqualNumber {
             System.out.println( z + " " + y);
         else
             System.out.println("Одинаковых чисел нет");
-
-
     }
 }

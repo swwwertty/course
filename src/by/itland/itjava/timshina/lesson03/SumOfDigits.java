@@ -20,6 +20,5 @@ public class SumOfDigits {
         else
              System.out.println("Число не четырехзначное");
 
-
     }
 }

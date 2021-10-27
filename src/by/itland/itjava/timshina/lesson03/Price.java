@@ -34,6 +34,5 @@ public class Price {
                 System.out.printf("%d рублей %.0f копеек", a, b);
             }
         }
-
     }
 }
