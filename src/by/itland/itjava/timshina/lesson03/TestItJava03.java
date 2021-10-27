@@ -125,9 +125,9 @@ public class TestItJava03 {
 
     @Test
     public void testPrice() {
-        run("5.26").include("5 рублей 26 копеек");
-        run("1.02").include("1 рубль 2 копейки");
-        run("23,01").include("23 рубля  1 копейка");
+        run("5,26").include("5 рублей 26 копеек");
+        run("1,02").include("1 рубль 2 копейки");
+        run("23,01").include("23 рубля 1 копейка");
         run("75,51").include("75 рублей 51 копейка");
         run("52,51").include("52 рубля 51 копейка");
     }

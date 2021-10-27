@@ -11,7 +11,6 @@ public class SumOfDigits {
         int c = Math.abs(x) % 100 / 10;
         int d = Math.abs(x) / 100 % 10;
         int res = 0;
-        // System.out.printf("%d, %d, %d, %d, %d", x, b, d, c, a);
         if ((x > 999 && x < 10000) )
             System.out.println(a + b + c + d);
         else if (x > -10000 && x < -999) {
