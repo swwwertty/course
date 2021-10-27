@@ -11,7 +11,7 @@ public class NumberDayYear {
         int m = Math.abs(mm);
         int y = scanner.nextInt();
         int res = 0;
-        if (((y % 100 == 0) && (y % 400 != 0)) && (y % 4 != 0)) {
+        if (!((y % 4 == 0) && ((y % 100 != 0) || (y % 400 == 0)))) {
             if (m == 1)
                 res = Math.abs(d);
             if (m == 2)
