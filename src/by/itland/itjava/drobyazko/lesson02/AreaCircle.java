@@ -1,4 +1,4 @@
-package by.itland.itjava.drobyazko;
+package by.itland.itjava.drobyazko.lesson02;
 
 import java.util.Locale;
 import java.util.Scanner;

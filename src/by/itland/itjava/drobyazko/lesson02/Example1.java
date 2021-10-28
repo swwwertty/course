@@ -1,12 +1,13 @@
-package by.itland.itjava.drobyazko;
+package by.itland.itjava.drobyazko.lesson02;
 
 import java.util.Scanner;
 
-public class Example2 {
+public class Example1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
-        double res = (Math.pow(x, 2) - 7 * x + 10) /(Math.pow(x, 2)- 8 * x + 10);
+        int y = scanner.nextInt();
+        double res = Math.pow(3, -x) - Math.cos(x) + Math.sin(2*x*y);
         System.out.println(res);
     }
 }
