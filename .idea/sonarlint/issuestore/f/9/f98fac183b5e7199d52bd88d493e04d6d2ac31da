@@ -1,0 +1,59 @@
+
+\	java:S112‡"FDefine and throw a dedicated exception instead of using a generic one.(ş¦ÂÒ
+J
+java:S3740|"/Provide the parametrized type for this generic.(›ş‘Éÿÿÿÿÿ
+F
+java:S3740ˆ"/Provide the parametrized type for this generic.(ßŠ¿
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ååÿºúÿÿÿÿ
+M	java:S106"9Replace this use of System.out or System.err by a logger.(¾ÅÆx
+S	java:S106#"9Replace this use of System.out or System.err by a logger.(Øêõøÿÿÿÿ
+N	java:S106,"9Replace this use of System.out or System.err by a logger.(œâ¡æ
+N	java:S1067"9Replace this use of System.out or System.err by a logger.(×ïï
+N	java:S106@"9Replace this use of System.out or System.err by a logger.(²ŠÉ™
+N	java:S106I"9Replace this use of System.out or System.err by a logger.(õñ¸ß
+N	java:S106X"9Replace this use of System.out or System.err by a logger.(¦Î½
+N	java:S106`"9Replace this use of System.out or System.err by a logger.(È¹ğ‘
+S	java:S106i"9Replace this use of System.out or System.err by a logger.(ú²¼ÿÿÿÿÿ
+R
+java:S1117ˆ";Rename "aClass" which hides the field declared at line 215.(ßŠ¿
+H
+java:S3011”",This accessibility update should be removed.(íË©¶úÿÿÿÿ
+T	java:S106˜"9Replace this use of System.out or System.err by a logger.(ø‚¡çûÿÿÿÿ
+T	java:S106™"9Replace this use of System.out or System.err by a logger.(†ÒÍæûÿÿÿÿ
+T	java:S106š"9Replace this use of System.out or System.err by a logger.(ĞÃóŠùÿÿÿÿ
+C
+java:S3011ª",This accessibility update should be removed.(Ó«§¯
+O	java:S106­"9Replace this use of System.out or System.err by a logger.(ìÍ¦‡
+A
+java:S1197¼"*Move the array designators [] to the type.(µš±
+O	java:S106É"9Replace this use of System.out or System.err by a logger.(„°²§
+N	java:S106Ê"9Replace this use of System.out or System.err by a logger.(˜ÆÉ
+T	java:S106Ë"9Replace this use of System.out or System.err by a logger.(øÑ€æşÿÿÿÿ
+T	java:S106Ì"9Replace this use of System.out or System.err by a logger.(÷ˆéıÿÿÿÿ
+O	java:S106Ø"9Replace this use of System.out or System.err by a logger.(Ò…ŒÃ
+R	java:S125Ş"<This block of commented-out lines of code should be removed.(Í¦ØÔ
+u
+java:S1171‰"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+A
+java:S1197‹"*Move the array designators [] to the type.(ÂâÈÂ
+B
+java:S5960‚"+Remove this assertion from production code.(òüîÖ
+I
+java:S1068Ö"-Remove this unused "className" private field.(Ö„œüÿÿÿÿ
+G
+java:S1144‡"0Remove this unused private "checkMethod" method.(ş¦ÂÒ
+F
+java:S1144Ÿ"/Remove this unused private "findMethod" method.(¹ˆÑÍ
+G
+java:S1144¨"+Remove this unused private "invoke" method.(²Â–•øÿÿÿÿ
+>
+java:S1144÷"'Remove this unused private "is" method.(Ãƒ¡ú
+H
+java:S1144‚",Remove this unused private "exclude" method.(üÛÎùÿÿÿÿ
+k	java:S117|"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ş‘Éÿÿÿÿÿ
+[
+java:S2259“"DA "NullPointerException" could be thrown; "aClass" is nullable here.(‚Şş
+[
+java:S2259î"DA "NullPointerException" could be thrown; "aClass" is nullable here.(¥Ê½ò
+[
+java:S2259"DA "NullPointerException" could be thrown; "aClass" is nullable here.(‚Şş
