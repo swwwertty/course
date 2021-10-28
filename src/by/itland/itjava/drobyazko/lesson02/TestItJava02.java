@@ -1,4 +1,4 @@
-package by.itland.itjava.materials.lesson03;
+package by.itland.itjava.drobyazko.lesson02;
 
 
 import org.junit.Test;
@@ -10,156 +10,116 @@ import java.lang.reflect.Modifier;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-public class TestItJava03 {
+public class TestItJava02 {
     @Test
-    public void testPositiveNegativeNumber() {
-        run("2").include("Число положительное");
-        run("-115").include("Число отрицательное");
-        run("0").include("Число ноль");
+    public void testExample1(){
+        System.out.println("Проверка первого примера");
+        run("2\n4").include("0.2393546309931882");
+        run("5\n-1").include("0.26447415176359207");
+        run("-3\n-5").include("27.001960872507585");
+        run("5\n0").include("-0.2795469591257777");
+        run("0\n0").include("0.0");
     }
 
     @Test
-    public void testConvertNumber() {
-        run("5").include("5.0");
-        run("-3").include("-3.0");
-        run("0").include("0.0");
+    public void testExample2(){
+        System.out.println("Проверка второго примера");
+        run("5").include("0.0");
+        run("-3").include("0.930");
+        run("-5").include("0.933");
+        run("8").include("1.8");
     }
 
     @Test
-    public void testEqualNumber() {
-        run("5\n5\n3").include("5 5");
-        run("7\n-7\n2").include("Одинаковых чисел нет");
-        run("8\n8\n8").include("8 8 8");
-        run("8\n1\n1").include("1 1");
-        run("8\n0\n8").include("8 8");
+    public void testExample3(){
+        System.out.println("Проверка третьего примера");
+        run("5\n-2").include("3.702");
+        run("1\n1").include("Infinity");
+        run("4\n6").include("63.408");
+        run("8\n0").include("0.017");
     }
 
     @Test
-    public void testSumOfDigits() {
-        run("4587").include("24");
-        run("1234").include("10");
-        run("4532").include("14");
-        run("-4587").include("-24");
-        run("-9483").include("-24");
-        run("45").include("Число не четырехзначное");
+    public void testPerimeterSquareTriangle(){
+        System.out.println("Тест прямоугольного треугольника");
+        run("3\n4").include("Площадь прямоугольного треугольника со сторонами 3, 4: 6,000.\n" +
+                "Периметр: 12,000");
+        run("5\n5").include("Площадь прямоугольного треугольника со сторонами 5, 5: 12,500.\n" +
+                "Периметр: 17,071");
+        run("6\n8").include("Площадь прямоугольного треугольника со сторонами 6, 8: 24,000.\n" +
+                "Периметр: 24,000");
+    }
 
+    @Test
+    public void testAreaCircle(){
+        System.out.println("Тест окружности");
+        run("15").include("Площадь круга:  17.905. Длина окружности: 15.0");
+        run("10").include("Площадь круга:  7.958. Длина окружности: 10.0");
+        run("20").include("Площадь круга:  31.831. Длина окружности: 20.0");
+        run("5").include("Площадь круга:  1.989. Длина окружности: 5.0");
+    }
+
+    @Test
+    public void testDistanceBetweenTwoPoint(){
+        System.out.println("Тест на расстояние между точками");
+        run("1\n4\n2\n7").include("Расстояние между точками A(1, 4) и B(2, 7): 3,162");
+        run("5\n-7\n7\n7").include("Расстояние между точками A(5, -7) и B(7, 7): 14,142");
+        run("0\n0\n0\n0").include("Расстояние между точками A(0, 0) и B(0, 0): 0");
+        run("0\n-3\n-4\n0").include("Расстояние между точками A(0, -3) и B(-4, 0): 5");
+    }
+
+    @Test
+    public void testEquilateralTriangle(){
+        System.out.println("Тест равностороннего треугольника");
+        run("6,2").include("Треугольник со стороной 6,200 имеет:\n" +
+                " Высоту 5,369\n" +
+                " площадь 16,645\n" +
+                " радиус вписанной окружности 1,790\n" +
+                "радиус описанной окружности 3,580");
+        run("3,465").include("Треугольник со стороной 3,465 имеет:\n" +
+                " Высоту 3,001\n" +
+                " площадь 5,199\n" +
+                " радиус вписанной окружности 1,000\n" +
+                "радиус описанной окружности 2,001");
+    }
+
+    @Test
+    public void testQuadraticEquation(){
+        System.out.println("Проверка уравнения");
+        run("1\n8\n12").include("Уравнение 1x^2+8x+12 имеет корни x1=-2,00 x2=-6,00");
+        run("1\n8\n-9").include("Уравнение 1x^2+8x+-9 имеет корни x1=1,00 x2=-9,00");
+        run("1\n8\n5").include("Уравнение 1x^2+8x+5 имеет корни x1=-0,68 x2=-7,32");
+    }
+
+    @Test
+    public  void testExample4(){
+        System.out.println("Пример 4");
+        run("5\n2").include("3.9000877550766466");
+        run("-3\n5").include("-3.868070142912124");
+        run("1\n1").include("-4.941782221533427");
 
     }
 
     @Test
-    public void testLeapYear() {
-        run("2000").include("Високосный");
-        run("1100").include("Невисокосный");
-        run("1600").include("Високосный");
-        run("2020").include("Високосный");
-        run("2100").include("Невисокосный");
-        run("-2015").include("Год не может быть отрицательным");
+    public void testExample5(){
+        System.out.println("Пример 5");
+        run("5").include("2514.5892427466315");
+        run("2").include("8.907025731743182");
+        run("154").include("8.60546445226192E10");
+        run("7").include("14406.430134012811");
     }
 
-    @Test
-    public void testDayMonth() {
-        run("3\n4").include("Март - четверг");
-        run("14\n6").include("Неправильное значение месяца");
-        run("11\n9").include("Неправильное значение дня");
-        run("17\n10").include("Неправильное значение месяца и дня");
-    }
 
-    @Test
-    public void testDayMonthModification() {
-        run("3\n4").include("Март - четверг");
-        run("2\n26").include("Февраль - пятница");
-        run("0\n0").include("Декабрь - воскресенье");
-        run("4\n651").include("Апрель - воскресенье");
-        run("15\n9").include("Март - вторник");
-        run("-15\n9").include("Неправильное значение месяца");
-        run("15\n-9").include("Неправильное значение дня");
-        run("-15\n-9").include("Неправильное значение месяца и дня");
-    }
 
-    @Test
-    public void testQuadratic() {
-        run("1\n8\n12").include("x1=-2,00; x2=-6,00");
-        run("2\n8\n8").include("x1=-2,00; x2=-2,00");
-        run("7\n6\n5").include("Уравнение не имеет корней");
-    }
 
-    @Test
-    public void testCheckLastNumber() {
-        run("265\n4").include("Цифра 4 не является последней числа 265");
-        run("17\n7").include("Цифра 7 является последней числа 17");
-        run("-15478\n8").include("Цифра 8 является последней числа -15478");
-        run("13\n-3").include("Число к не может быть отрицательным и больше 9");
-        run("14513\n13").include("Число к не может быть отрицательным и больше 9");
-    }
 
-    @Test
-    public void testNumberDayYear() {
-        run("3\n3\n2000").include("63");
-        run("3\n3\n1999").include("62");
-        run("3\n-3\n1999").include("62");
-        run("-3\n-3\n-1999").include("62");
-        run("3\n3\n1500").include("62");
-        run("3\n3\n1600").include("63");
-        run("3\n3\n2020").include("63");
-        run("18\n1\n2021").include("18");
-        run("-18\n1\n-2021").include("18");
-    }
 
-    @Test
-    public void testCheckingForMultiplicity() {
-        run("456\n3").include("Число 456 кратное 3");
-        run("-456\n3").include("Число -456 кратное 3");
-        run("456\n5").include("Число 456 некратное 5");
-        run("155\n5").include("Число 155 кратное 5");
-        run("1024\n32").include("Число 1024 кратное 32");
-    }
-
-    @Test
-    public void testMultiplicationNumbers() {
-        run("4\n3").include("четыре умножить на три равно двенадцать");
-        run("7\n3").include("семь умножить на три равно двадцать один");
-        run("15\n7").include("нужно вводить толко цифры, т.е. значения от 0 до 10");
-        run("2\n2").include("два умножить на два равно четыре");
-        run("0\n9").include("ноль умножить на девять равно ноль");
-    }
-
-    @Test
-    public void testPrice() {
-        run("5,26").include("5 рублей 26 копеек");
-        run("1,02").include("1 рубль 2 копейки");
-        run("23,01").include("23 рубля 1 копейка");
-        run("75,51").include("75 рублей 51 копейка");
-        run("52,51").include("52 рубля 51 копейка");
-    }
-
-    @Test
-    public void testAgeHuman() {
-        run("Sergey\n28").include("Sergey 28 лет");
-        run("Petr\n33").include("Petr 33 года");
-        run("Kira\n1").include("Kira 1 год");
-        run("name\n31").include("name 31 год");
-        run("alEx\n24").include("alEx 24 года");
-        run("alEx\n113").include("alEx 113 лет");
-        run("alEx\n101").include("alEx 101 год");
-    }
-
-    @Test
-    public void testIharBot() {
-        run("3500").include("Мы вам перезвоним");
-        run("2000\n5").include("За месяц май начислено $3000,00");
-        run("2500\n15").include("За месяц 15 начислено $0,00");
-        run("2100\n-1").include("За месяц -1 начислено $0,00");
-        run("2100\n8").include("За месяц август начислено $2100,00");
-        run("200").include("Мы вам перезвоним");
-
-    }
-
-    /*
-    ===========================================================================================================
-    НИЖЕ ВСПОМОГАТЕЛЬНЫЙ КОД ТЕСТОВ. НЕ МЕНЯЙТЕ В ЭТОМ ФАЙЛЕ НИЧЕГО.
-    Но изучить как он работает - можно, это всегда будет полезно.
-    ===========================================================================================================
-    */
+/*
+===========================================================================================================
+НИЖЕ ВСПОМОГАТЕЛЬНЫЙ КОД ТЕСТОВ. НЕ МЕНЯЙТЕ В ЭТОМ ФАЙЛЕ НИЧЕГО.
+Но изучить как он работает - можно, это всегда будет полезно.
+===========================================================================================================
+*/
     //-------------------------------  методы ----------------------------------------------------------
     private Class findClass(String SimpleName) {
         String full = this.getClass().getName();
@@ -219,11 +179,11 @@ public class TestItJava03 {
 
     //метод находит и создает класс для тестирования
     //по имени вызывающего его метода, testTaskA1 будет работать с TaskA1
-    private static TestItJava03 run(String in) {
+    private static TestItJava02 run(String in) {
         return run(in, true);
     }
 
-    private static TestItJava03 run(String in, boolean runMain) {
+    private static TestItJava02 run(String in, boolean runMain) {
         Throwable t = new Throwable();
         StackTraceElement trace[] = t.getStackTrace();
         StackTraceElement element;
@@ -242,11 +202,11 @@ public class TestItJava03 {
         System.out.println("Старт теста для " + clName);
         if (!in.isEmpty()) System.out.println("input:\n" + in);
         System.out.println("---------------------------------------------");
-        return new TestItJava03(clName, in, runMain);
+        return new TestItJava02(clName, in, runMain);
     }
 
     //-------------------------------  тест ----------------------------------------------------------
-    public TestItJava03() {
+    public TestItJava02() {
         //Конструктор тестов
     }
 
@@ -258,7 +218,7 @@ public class TestItJava03 {
     private StringWriter strOut = new StringWriter(); //накопитель строки вывода
 
     //Основной конструктор тестов
-    private TestItJava03(String className, String in, boolean runMain) {
+    private TestItJava02(String className, String in, boolean runMain) {
         //this.className = className;
         aClass = null;
         try {
@@ -284,18 +244,18 @@ public class TestItJava03 {
     }
 
     //проверка вывода
-    private TestItJava03 is(String str) {
+    private TestItJava02 is(String str) {
         assertTrue("ERROR:Ожидается такой вывод:\n<---начало---->\n" + str + "<---конец--->",
                 strOut.toString().equals(str));
         return this;
     }
 
-    private TestItJava03 include(String str) {
+    private TestItJava02 include(String str) {
         assertTrue("ERROR:Строка не найдена: " + str + "\n", strOut.toString().contains(str));
         return this;
     }
 
-    private TestItJava03 exclude(String str) {
+    private TestItJava02 exclude(String str) {
         assertTrue("ERROR:Лишние данные в выводе: " + str + "\n", !strOut.toString().contains(str));
         return this;
     }

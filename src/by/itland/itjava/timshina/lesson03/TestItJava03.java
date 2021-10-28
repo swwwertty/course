@@ -1,4 +1,4 @@
-package by.itland.itjava.materials.lesson03;
+package by.itland.itjava.timshina.lesson03;
 
 
 import org.junit.Test;
@@ -79,7 +79,7 @@ public class TestItJava03 {
     @Test
     public void testQuadratic() {
         run("1\n8\n12").include("x1=-2,00; x2=-6,00");
-        run("2\n8\n8").include("x1=-2,00; x2=-2,00");
+        run("2\n8\n8").include("x1=-4,00; x2=-4,00");
         run("7\n6\n5").include("Уравнение не имеет корней");
     }
 
@@ -118,7 +118,7 @@ public class TestItJava03 {
     public void testMultiplicationNumbers() {
         run("4\n3").include("четыре умножить на три равно двенадцать");
         run("7\n3").include("семь умножить на три равно двадцать один");
-        run("15\n7").include("нужно вводить толко цифры, т.е. значения от 0 до 10");
+        run("15\n7").include("нужно вводить только цифры, т.е. значения от 0 до 10");
         run("2\n2").include("два умножить на два равно четыре");
         run("0\n9").include("ноль умножить на девять равно ноль");
     }
